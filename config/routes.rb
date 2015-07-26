@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'quotes/index'
-
-  get 'quotes/new'
-
-  get 'quotes/edit'
+  resources :quotes
 
   root 'mainpages#index'
   # The priority is based upon order of creation: first created -> highest priority.

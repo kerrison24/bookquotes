@@ -1,5 +1,11 @@
-<h1>Edit your quote</h1>
 <%= form_for @quote do |f| %>
+  <% if flash[:quote_errors] %>
+    <ul>
+      <% flash[:quote_errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <p>
     <%= f.label :passage %><br>
     <%= f.text_field :passage %>

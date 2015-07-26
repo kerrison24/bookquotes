@@ -1,0 +1,10 @@
+<h1>All quotes</h1>
+<% @quotes.each do |quote| %>
+  <%= quote.passage %><br>
+  <% if quote.book_title? %> <%= quote.book_title %><br> <% end %>
+  <% if quote.book_author.nil? or quote.book_author == "" %>
+    Anonymous
+  <% else %>
+    <%= quote.book_author %>
+  <% end %><br><br>
+<% end %>
