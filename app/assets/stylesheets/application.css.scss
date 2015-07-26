@@ -19,6 +19,7 @@
 
 html, body {
   margin-top: -20px;
+  margin-bottom: 2%;
 }
 
 .contents {
@@ -35,4 +36,8 @@ html, body {
 .quotes {
   width: 50%;
   margin: 0 auto;
+}
+
+.center {
+  text-align: center;
 }
