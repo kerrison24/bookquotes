@@ -1,18 +1,2 @@
 <h1>Edit your quote</h1>
-<%= form_for @quote do |f| %>
-  <p>
-    <%= f.label :passage %><br>
-    <%= f.text_field :passage %>
-  </p>
-  <p>
-    <%= f.label :book_title %><br>
-    <%= f.text_field :book_title %>
-  </p>
-  <p>
-    <%= f.label :book_author %><br>
-    <%= f.text_field :book_author %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'quotes/form' %>

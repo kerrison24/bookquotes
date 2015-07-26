@@ -1,10 +1,16 @@
-<h1>All quotes</h1>
-<% @quotes.each do |quote| %>
-  <%= quote.passage %><br>
-  <% if quote.book_title? %> <%= quote.book_title %><br> <% end %>
-  <% if quote.book_author.nil? or quote.book_author == "" %>
-    Anonymous
-  <% else %>
-    <%= quote.book_author %>
-  <% end %><br><br>
-<% end %>
+<div class="quotes">
+  <% @quotes.each do |quote| %>
+  <div class="row">
+    <div class="col s12">
+      <div class="card teal darken-2">
+        <div class="card-content white-text">
+          <p><%= quote.quote_string %></p>
+        </div>
+        <div class="card-action">
+          <i><%= quote.book_title %> by <%= quote.book_author %></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

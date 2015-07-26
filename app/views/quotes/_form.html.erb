@@ -1,24 +1,31 @@
-<%= form_for @quote do |f| %>
-  <% if flash[:quote_errors] %>
-    <ul>
-      <% flash[:quote_errors].each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
+<div class="form">
+  <%= form_for @quote do |f| %>
+    <% if flash[:quote_errors] %>
+      <ul>
+        <% flash[:quote_errors].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <div class="row">
+      <div class="col s12">
+        <%= f.label :quote, class: "white-text" %><br>
+        <%= f.text_field :quote_string %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <%= f.label :book_title, class: "white-text" %><br>
+        <%= f.text_field :book_title %>
+      </div>
+      <div class="col s6">
+        <%= f.label :book_author, class: "white-text" %><br>
+        <%= f.text_field :book_author %>
+      </div>
+    </div>
+
+    <p>
+      <%= f.submit "Submit", class: "btn waves-effect waves-light teal darken-2" %>
+    </p>
   <% end %>
-  <p>
-    <%= f.label :passage %><br>
-    <%= f.text_field :passage %>
-  </p>
-  <p>
-    <%= f.label :book_title %><br>
-    <%= f.text_field :book_title %>
-  </p>
-  <p>
-    <%= f.label :book_author %><br>
-    <%= f.text_field :book_author %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+</div>

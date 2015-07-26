@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
   def index
-    @quotes = Quote.all
+    @quotes = Quote.all.order("quotes.created_at DESC")
   end
 
   def new
@@ -28,6 +28,6 @@ class QuotesController < ApplicationController
 
   private
     def quote_params
-      params.require(:quote).permit(:passage, :book_title, :book_author)
+      params.require(:quote).permit(:quote_string, :book_title, :book_author)
     end
 end
