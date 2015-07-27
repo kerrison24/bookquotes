@@ -8,6 +8,7 @@
         </div>
         <div class="card-action">
           <i><%= quote.book_title %> by <%= quote.book_author %></i>
+          <span>(<%= quote.vote_count %>), <%= link_to 'Upvote', quotes_upvote_path(quote) %><%= link_to 'Downvote', quotes_downvote_path(quote) %></span>
         </div>
       </div>
     </div>

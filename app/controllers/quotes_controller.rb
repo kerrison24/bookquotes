@@ -26,6 +26,24 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
   end
 
+  def upvote
+    @quote = Quote.find(params[:format])
+    vote_count = @quote.vote_count + 1
+    @quote.update(:vote_count => vote_count)
+    redirect_to root_url
+  end
+
+  def downvote
+    @quote = Quote.find(params[:format])
+    vote_count = @quote.vote_count - 1
+    @quote.update(:vote_count => vote_count)
+    if @quote.vote_count == -5
+      @quote.destroy
+    end
+    redirect_to root_url
+  end
+
+
   private
     def quote_params
       params.require(:quote).permit(:quote_string, :book_title, :book_author)

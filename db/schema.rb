@@ -11,14 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726092709) do
+ActiveRecord::Schema.define(version: 20150727133315) do
 
   create_table "quotes", force: :cascade do |t|
     t.string   "quote_string"
     t.string   "book_author"
     t.string   "book_title"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "vote_count",   default: 0
   end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "vote_count"
+    t.integer  "quote_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "votes", ["quote_id"], name: "index_votes_on_quote_id"
 
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'quotes/upvote' => 'quotes#upvote'
+  get 'quotes/downvote' => 'quotes#downvote'
   resources :quotes
 
   root 'mainpages#index'
