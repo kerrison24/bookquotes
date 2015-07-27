@@ -1,5 +1,6 @@
 Feature ideas:
 
+- add users
 - upvoting/downvoting, can only be done by users logged in and can only manipulate it by 1 value
 - users should be able to save their favourite quotes
 - users should be able to view quotes posted by them
