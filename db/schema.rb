@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728073620) do
+ActiveRecord::Schema.define(version: 20150729062418) do
 
   create_table "quotes", force: :cascade do |t|
     t.string   "quote_string"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20150728073620) do
     t.datetime "updated_at",               null: false
     t.integer  "vote_count",   default: 0
   end
+
+  create_table "saved_quotes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "quote_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "saved_quotes", ["quote_id"], name: "index_saved_quotes_on_quote_id"
+  add_index "saved_quotes", ["user_id"], name: "index_saved_quotes_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
