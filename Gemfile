@@ -51,3 +51,4 @@ end
 
 gem 'materialize-sass'
 gem 'will_paginate', '~> 3.0.6'
+gem 'devise'

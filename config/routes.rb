@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'quotes/upvote' => 'quotes#upvote'
   get 'quotes/downvote' => 'quotes#downvote'
   
