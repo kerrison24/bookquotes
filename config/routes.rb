@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  resources :users, only: [:show]
   get 'quotes/upvote' => 'quotes#upvote'
   get 'quotes/downvote' => 'quotes#downvote'
-  
+
   resources :quotes
 
   root 'mainpages#index'
